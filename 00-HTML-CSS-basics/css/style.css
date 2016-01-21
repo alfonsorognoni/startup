@@ -1,3 +1,14 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; /* Needed for mobile WebKit */
+    -moz-box-sizing: border-box; /* Needed for Firefox */
+    box-sizing: border-box
+}
+
+* {
+    margin-bottom: .5em;
+    padding: .5em;
+}
+
 html * {
   font-size: 14px !important;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,22 +37,41 @@ footer {
 
 .header {
   font-size: 46px;
+  display: block;
+  width: 100%;
+  height: 100px;
 }
 
 .footer {
   font-size: 10px;
+  display: block;
+  width: 100%;
+  clear: both;
+  height: 50px;
 }
 
 .content {
   font-size: 14px;
+  display: block;
+  width: 40%;
+  float: left;
+  min-height: 200px;
 }
 
 .navigation {
   font-size: 12px;
+  display: block;
+  width: 30%;
+  float: left;
+  min-height: 200px;
 }
 
 .sidebar {
   font-size: 10px;
+  display: block;
+  width: 30%;
+  float: left;
+  min-height: 200px;
 }
 
 [class*="a"] {
@@ -54,4 +84,9 @@ footer {
 
 .oh-no-inline-styles {
   background-color: green !important;
+}
+
+article {
+  background-color: red;
+  min-height: 100px;
 }
