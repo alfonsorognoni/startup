@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Sign Up Form</title>
+  <meta name="description" content="Globant html5 bootcamp">
+  <meta name="author" content="Alfonso Rognoni">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <section>
+    <h2>Join us</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" value="" placeholder="Enter Full Name" required >
+      
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" value="" placeholder="Enter your email" required>
+      
+        <label for="birthday">Birthday</label>
+        <input id="birthday" type="text" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" title="Date format mm/dd/yyyy" placeholder="Enter Your Birthday" required >
+      
+        <label for="sport">Favourite Sport</label>
+        <select name="sport" id="sport" required>
+          <option value="">Select One</option>
+          <option value="soccer">Soccer</option>
+          <option value="tennis">Tennis</option>
+          <option value="basketball">Basketball</option>
+        </select>
+      
+        <label for="bio">Bio</label><br>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter Small Bio" required></textarea>
+      
+        <button type="submit" value="Submit">Submit</button>
+        <button type="reset" value="Reset">Reset Form</button>
+    </form>
+  </section>
+</body>
+</html>
