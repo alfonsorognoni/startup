@@ -14,12 +14,12 @@ Track.prototype.stop = function() {
 
 // set value of attr in Track
 Track.prototype.set = function(attr, value) {
-  this.attr = value;
+  this[attr] = value;
 };
 
 // return value of attr in Track
 Track.prototype.get = function(attr) {
-  return this.attr;
+  return this[attr];
 };
 
 var tema = new Track("R U Mine?", "Artic Monkeys", 2.00);
