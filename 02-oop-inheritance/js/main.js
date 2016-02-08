@@ -31,6 +31,43 @@ Observable.prototype.notify = function(action) {
   }
 };
 
+
+var trackModule = (function(){
+  
+  var Track = function(title, artist, duration){
+    Observable.call(this);
+    this.title = title;
+    this.artist = artist;
+    this.duration = duration;
+  }
+
+  extend(Track, Observable);
+
+  Track.prototype.play = function() {
+    //console.log("You are listen, " + this.title);
+    this.notify("play");
+  };
+
+  Track.prototype.stop = function() {
+    this.notify("stop");
+  };
+
+  // set value of attr in Track
+  Track.prototype.set = function(attr, value) {
+    this[attr] = value;
+  };
+
+  // return value of attr in Track
+  Track.prototype.get = function(attr) {
+    return this[attr];
+  };
+
+  return Track;
+
+}());
+
+
+/*
 var Track = function(title, artist, duration){
   Observable.call(this);
   this.title = title;
@@ -58,7 +95,7 @@ Track.prototype.set = function(attr, value) {
 Track.prototype.get = function(attr) {
   return this[attr];
 };
-
+*/
 //===============TrackObserver
 var TrackObserver = function(){
   this.events = 
@@ -79,8 +116,18 @@ var TrackObserver = function(){
     ]
 };
 
+/*==DownloadableTrack======================*/
+var DownloadableTrack = function () {
+  trackModule.call(this);
+};
 
-var droid = new Track();
+extend(DownloadableTrack, trackModule);
+
+DownloadableTrack.prototype.download = function () {
+  console.log('Downloading...'+this.title);
+};
+
+var droid = new trackModule();
 var trackObserver = new TrackObserver([]);
 
 droid.set('artist', 'Jordan Suckley');
